@@ -27,12 +27,16 @@ var makeLinkedList = function(){
   };
 
   list.contains = function(target){
-    for(var key in list){
-      if(list[key].value === target){
+    var node = list.head;
+    var nodeChecker = function(node){
+      if (node.value === target){
         return true;
+      } else if (node.next === null){
+        return false;
       }
+      return nodeChecker(node.next);
     }
-    return false;
+    return nodeChecker(node);
   };
 
   return list;
