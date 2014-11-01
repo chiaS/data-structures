@@ -20,7 +20,6 @@ treeMethods.contains = function(target){
   var found = false;
 
   var treeSearch = function(node){
-    debugger;
     if (node.value === target){
       found = true;
     } else {
